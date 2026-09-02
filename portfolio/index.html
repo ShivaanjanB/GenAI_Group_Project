@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abia Khan — Valuation Desk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +75,11 @@ a{color:inherit}
 }
 
 /* ---- Hero ---- */
-.hero{padding:66px 0 48px;position:relative}
+.hero{padding:96px 0 20px;position:relative}
+.hero-inner{max-width:700px}
+.hero .lede{max-width:52ch}
+.facts-line{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--muted);margin-top:20px;letter-spacing:.02em}
+.card-cta{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.06em;color:var(--accent);margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-weight:500}
 .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}}
 .avail{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:999px;padding:6px 13px;background:var(--surface)}
@@ -261,147 +267,88 @@ footer{padding:38px 0;text-align:center;color:var(--faint);font-size:.78rem;font
 </nav>
 
 <header class="hero wrap" id="top">
-  <div class="hero-grid">
-    <div>
-      <span class="avail"><span class="dot"></span>Open to 2026 graduate &amp; analyst roles</span>
-      <h1>Valuation, built <em>from first principles.</em></h1>
-      <div class="role">MSc Business &amp; Finance · Warwick Business School</div>
-      <p class="lede">I'm <strong>Abia Khan</strong> — an aspiring investment banking &amp; asset-management analyst with a self-built portfolio of <strong>six institutional-grade financial models</strong>: DCF, LBO, M&amp;A, trading comps, an equity research note, and a Power BI credit-risk dashboard.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#work">Explore the models
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="assets/Abia_Khan_CV.pdf" download="Abia_Khan_CV.pdf" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-          Download CV</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
-      </div>
+  <div class="hero-inner">
+    <span class="avail"><span class="dot"></span>Open to 2026 graduate &amp; analyst roles</span>
+    <h1>Abia Khan</h1>
+    <div class="role">Aspiring Investment Banking &amp; Asset Management Analyst</div>
+    <p class="lede">MSc Business &amp; Finance at Warwick Business School. I build financial models from the ground up — and let the analysis, not the buzzwords, do the talking.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#work">View my work
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="assets/Abia_Khan_CV.pdf" download="Abia_Khan_CV.pdf" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Download CV</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
-    <aside class="hero-card" aria-label="Featured call: Burberry">
-      <div class="cap"><b>BRBY · Burberry Group</b><span>EQUITY NOTE</span></div>
-      <div class="qrow"><span class="k">Recommendation</span><span class="v">BUY <span class="chip buy">TP £16.50</span></span></div>
-      <div class="qrow"><span class="k">Implied upside</span><span class="v" style="color:var(--pos)">+54% <span class="chip up">▲</span></span></div>
-      <div class="qrow"><span class="k">DCF fair value</span><span class="v">£22.95</span></div>
-      <div class="qrow"><span class="k">WACC / terminal g</span><span class="v">7.5% / 2.5%</span></div>
-      <div class="qrow"><span class="k">Methodology</span><span class="v">DCF + Comps</span></div>
-    </aside>
-  </div>
-
-  <div class="kpis">
-    <div class="kpi"><div class="n">6</div><div class="l">Institutional-grade models built end-to-end</div></div>
-    <div class="kpi"><div class="n">3.2×</div><div class="l">Greggs LBO base-case MOIC · 26.5% IRR</div></div>
-    <div class="kpi"><div class="n">£9.1bn</div><div class="l">Burberry enterprise value derived via DCF</div></div>
-    <div class="kpi"><div class="n">150k</div><div class="l">Loan records in the Power BI credit dashboard</div></div>
   </div>
 </header>
 
 <main>
-<section class="intro" aria-label="Introduction">
+<section class="intro" id="about" aria-label="About">
   <div class="wrap intro-inner">
     <div class="avatar" aria-hidden="true">AK</div>
     <div class="intro-body">
-      <div class="hi">Hello, and welcome</div>
-      <p>I'm Abia — a finance graduate who fell for the craft of valuation: the quiet discipline of turning a company's filings into a defensible number, and the honesty to say when the number doesn't support the story. This portfolio is my proof of work — six models I built from scratch, each one a real company, real data, and a real conclusion I'd stand behind in an interview room.</p>
+      <div class="hi">A little about me</div>
+      <p>I'm a finance graduate who loves turning a company's numbers into a clear, honest story — and I care as much about getting the answer right as making it look good. Alongside my MSc at Warwick, I've completed internships across banking, energy and the charitable sector, and built an independent portfolio of six financial models from scratch.</p>
       <div class="sign">— <b>Abia Khan</b> · MSc Business &amp; Finance, Warwick Business School</div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="wrap about">
-  <div class="section-label"><span class="eyebrow">About</span><span class="num">01</span><span class="rule"></span></div>
-  <div class="about-grid">
-    <div>
-      <p class="about-lead">A finance graduate who doesn't just <b>read</b> valuations — I build them, line by line, and stress-test every assumption until the story holds.</p>
-      <p>MSc Business &amp; Finance candidate at <strong style="color:var(--ink)">Warwick Business School</strong> (graduating September 2026), with a BBA in Finance &amp; Business Analytics from Symbiosis International University graded equivalent to a UK First. My independent modelling portfolio spans intrinsic and relative valuation, leveraged finance, M&amp;A accretion/dilution and credit-risk analytics — each model sourced from live company filings and documented so a reviewer can trace every number.</p>
-      <p>Three finance internships across banking, energy and the charitable sector have sharpened how I connect the numbers to a real client decision. I'm targeting graduate and analyst roles in <strong style="color:var(--ink)">investment banking, asset management, credit risk and consulting</strong>.</p>
-    </div>
-    <div class="factlist" aria-label="Key facts">
-      <div class="row"><span class="k">Based in</span><span class="v">Coventry, UK</span></div>
-      <div class="row"><span class="k">Degree</span><span class="v">MSc Business &amp; Finance</span></div>
-      <div class="row"><span class="k">Graduating</span><span class="v">September 2026</span></div>
-      <div class="row"><span class="k">Right to work</span><span class="v">UK · Graduate Route</span></div>
-      <div class="row"><span class="k">Sponsorship</span><span class="v">Not required (2 yrs)</span></div>
-      <div class="row"><span class="k">Languages</span><span class="v">EN · HI · KO · FR</span></div>
+      <div class="facts-line">Coventry, UK &nbsp;·&nbsp; Graduating Sept 2026 &nbsp;·&nbsp; Right to work in the UK &nbsp;·&nbsp; English · Hindi · Korean · French</div>
     </div>
   </div>
 </section>
 
 <section id="work" class="wrap">
-  <div class="section-label"><span class="eyebrow">Modelling Portfolio</span><span class="num">02</span><span class="rule"></span></div>
-  <h2 class="h2" style="margin-bottom:10px">Six models. Click any to open the full analysis.</h2>
-  <p style="color:var(--muted);max-width:60ch;margin:0 0 34px">Each opens a detailed breakdown — the thesis, the mechanics, the real output figures and interactive charts drawn straight from the workbooks.</p>
+  <div class="section-label"><span class="eyebrow">Selected Work</span><span class="rule"></span></div>
+  <h2 class="h2" style="margin-bottom:10px">Six things I've built.</h2>
+  <p style="color:var(--muted);max-width:52ch;margin:0 0 34px">A calm overview here — click any card if you'd like to see the full detail and charts behind it.</p>
   <div class="grid-proj" id="projGrid">
     <button class="pcard" data-modal="dcf">
       <svg class="open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       <span class="tag">DCF · Intrinsic Valuation</span>
       <h3>Burberry 5-Year DCF</h3>
-      <p class="sub">CAPM-derived WACC, Gordon-Growth terminal value and a two-way sensitivity grid on a FTSE 100 luxury name.</p>
-      <div class="metrics">
-        <div class="m"><div class="mv">£22.95</div><div class="ml">Implied price</div></div>
-        <div class="m"><div class="mv" style="color:var(--pos)">+114%</div><div class="ml">vs spot</div></div>
-        <div class="m"><div class="mv">7.5%</div><div class="ml">WACC</div></div>
-      </div>
+      <p class="sub">A full intrinsic valuation of a FTSE 100 luxury name, built from the ground up.</p>
+      <span class="card-cta">Open analysis →</span>
     </button>
     <button class="pcard" data-modal="comps">
       <svg class="open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       <span class="tag">Trading Comparables</span>
       <h3>Luxury &amp; Retail Comps</h3>
-      <p class="sub">Eleven companies across UK retail and global luxury, benchmarked on EV/EBITDA, EV/Revenue and P/E into a football-field range.</p>
-      <div class="metrics">
-        <div class="m"><div class="mv">11</div><div class="ml">Comparables</div></div>
-        <div class="m"><div class="mv">£19.52</div><div class="ml">EV/Rev implied</div></div>
-        <div class="m"><div class="mv">2 sectors</div><div class="ml">Coverage</div></div>
-      </div>
+      <p class="sub">A relative valuation across peers in UK retail and global luxury.</p>
+      <span class="card-cta">Open analysis →</span>
     </button>
     <button class="pcard" data-modal="lbo">
       <svg class="open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       <span class="tag">Leveraged Buyout</span>
       <h3>Greggs LBO</h3>
-      <p class="sub">4.5× entry leverage, a five-year term-loan schedule with cash-sweep mechanics, and full sponsor return analysis.</p>
-      <div class="metrics">
-        <div class="m"><div class="mv">3.2×</div><div class="ml">MOIC</div></div>
-        <div class="m"><div class="mv" style="color:var(--pos)">26.5%</div><div class="ml">IRR</div></div>
-        <div class="m"><div class="mv">5 yr</div><div class="ml">Hold</div></div>
-      </div>
+      <p class="sub">A private-equity buyout modelled end-to-end, with a full debt schedule and returns.</p>
+      <span class="card-cta">Open analysis →</span>
     </button>
     <button class="pcard" data-modal="ma">
       <svg class="open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       <span class="tag">M&amp;A · Accretion / Dilution</span>
       <h3>Moncler ← Burberry</h3>
-      <p class="sub">A bolt-on acquisition modelled at a 25% control premium with 50/50 financing and a solved breakeven-synergy figure.</p>
-      <div class="metrics">
-        <div class="m"><div class="mv" style="color:var(--neg)">−21%</div><div class="ml">EPS impact</div></div>
-        <div class="m"><div class="mv">€277m</div><div class="ml">Breakeven syn.</div></div>
-        <div class="m"><div class="mv">25%</div><div class="ml">Premium</div></div>
-      </div>
+      <p class="sub">An acquisition analysis testing whether the deal would help or hurt earnings.</p>
+      <span class="card-cta">Open analysis →</span>
     </button>
     <button class="pcard" data-modal="note">
       <svg class="open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       <span class="tag">Sell-Side Research</span>
       <h3>Equity Research Note</h3>
-      <p class="sub">A full initiation on Burberry — thesis, competitive positioning, blended valuation, and a risk section, into a BUY call.</p>
-      <div class="metrics">
-        <div class="m"><div class="mv">BUY</div><div class="ml">Rating</div></div>
-        <div class="m"><div class="mv">£16.50</div><div class="ml">Target price</div></div>
-        <div class="m"><div class="mv" style="color:var(--pos)">+54%</div><div class="ml">Upside</div></div>
-      </div>
+      <p class="sub">A written investment case — the kind of note an analyst publishes for clients.</p>
+      <span class="card-cta">Open analysis →</span>
     </button>
     <button class="pcard" data-modal="pbi">
       <svg class="open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
       <span class="tag">Power BI · Credit Risk</span>
       <h3>Lending Risk Dashboard</h3>
-      <p class="sub">An interactive dashboard on a 150,000-record lending book — Power Query cleaning, risk segmentation and calibration.</p>
-      <div class="metrics">
-        <div class="m"><div class="mv">150k</div><div class="ml">Records</div></div>
-        <div class="m"><div class="mv">Power BI</div><div class="ml">Tool</div></div>
-        <div class="m"><div class="mv">DAX</div><div class="ml">Modelling</div></div>
-      </div>
+      <p class="sub">An interactive Power BI dashboard that turns a large lending book into clear risk insight.</p>
+      <span class="card-cta">Open analysis →</span>
     </button>
   </div>
 </section>
 
 <section id="experience" class="wrap">
-  <div class="section-label"><span class="eyebrow">Experience</span><span class="num">03</span><span class="rule"></span></div>
+  <div class="section-label"><span class="eyebrow">Experience</span><span class="rule"></span></div>
   <div class="two-col">
     <div>
       <h2 class="h2" style="margin-bottom:26px">Work &amp; leadership</h2>
@@ -471,7 +418,7 @@ footer{padding:38px 0;text-align:center;color:var(--faint);font-size:.78rem;font
 </section>
 
 <section id="skills" class="wrap">
-  <div class="section-label"><span class="eyebrow">Capabilities</span><span class="num">04</span><span class="rule"></span></div>
+  <div class="section-label"><span class="eyebrow">Capabilities</span><span class="rule"></span></div>
   <div class="two-col">
     <div>
       <div class="skill-group">
