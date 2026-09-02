@@ -219,6 +219,27 @@ footer{padding:38px 0;text-align:center;color:var(--faint);font-size:.78rem;font
 .svg-val{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;fill:var(--ink)}
 .svg-axis{stroke:var(--line-strong);stroke-width:1}
 .svg-grid{stroke:var(--line);stroke-width:1}
+
+/* ---- Intro band ---- */
+.intro{border-top:1px solid var(--line)}
+.intro-inner{display:grid;grid-template-columns:auto 1fr;gap:38px;align-items:center;padding:56px 0}
+@media (max-width:760px){.intro-inner{grid-template-columns:1fr;gap:26px;padding:44px 0}}
+.avatar{width:132px;height:132px;border-radius:18px;background:linear-gradient(150deg,var(--accent-soft),var(--accent));
+  display:grid;place-items:center;font-family:"Fraunces",serif;font-weight:600;font-size:3rem;color:#0B1220;
+  box-shadow:var(--shadow);letter-spacing:.02em}
+.intro-body .hi{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.intro-body p{font-family:"Fraunces",serif;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.5;font-weight:400;margin:12px 0 0;color:var(--ink);text-wrap:pretty}
+.intro-body .sign{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--muted);margin-top:16px}
+.intro-body .sign b{color:var(--ink);font-weight:600}
+
+/* ---- Power BI embed ---- */
+.pbi-frame{width:100%;aspect-ratio:16/10;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface-2);margin:2px 0 8px}
+.pbi-placeholder{border:1px dashed var(--line-strong);border-radius:12px;padding:30px 24px;text-align:center;background:var(--surface-2);margin:2px 0 8px}
+.pbi-placeholder svg{color:var(--accent);margin-bottom:10px}
+.pbi-placeholder b{display:block;font-family:"Fraunces",serif;font-size:1.1rem;margin-bottom:6px}
+.pbi-placeholder span{font-size:.86rem;color:var(--muted);display:block;max-width:46ch;margin:0 auto}
+.dl-row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 4px}
+.btn-sm{font-size:.82rem;padding:9px 15px;border-radius:9px}
 </style>
 
 <nav class="nav">
@@ -250,6 +271,9 @@ footer{padding:38px 0;text-align:center;color:var(--faint);font-size:.78rem;font
         <a class="btn btn-primary" href="#work">Explore the models
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+        <a class="btn btn-ghost" href="assets/Abia_Khan_CV.pdf" download="Abia_Khan_CV.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Download CV</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -272,6 +296,17 @@ footer{padding:38px 0;text-align:center;color:var(--faint);font-size:.78rem;font
 </header>
 
 <main>
+<section class="intro" aria-label="Introduction">
+  <div class="wrap intro-inner">
+    <div class="avatar" aria-hidden="true">AK</div>
+    <div class="intro-body">
+      <div class="hi">Hello, and welcome</div>
+      <p>I'm Abia — a finance graduate who fell for the craft of valuation: the quiet discipline of turning a company's filings into a defensible number, and the honesty to say when the number doesn't support the story. This portfolio is my proof of work — six models I built from scratch, each one a real company, real data, and a real conclusion I'd stand behind in an interview room.</p>
+      <div class="sign">— <b>Abia Khan</b> · MSc Business &amp; Finance, Warwick Business School</div>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="wrap about">
   <div class="section-label"><span class="eyebrow">About</span><span class="num">01</span><span class="rule"></span></div>
   <div class="about-grid">
@@ -489,6 +524,7 @@ footer{padding:38px 0;text-align:center;color:var(--faint);font-size:.78rem;font
     <p>Looking for a graduate or analyst who already thinks in cash flows, multiples and risk? Let's connect.</p>
     <div class="contact-row">
       <a class="btn btn-primary" href="mailto:khan.abia1013@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="assets/Abia_Khan_CV.pdf" download="Abia_Khan_CV.pdf" target="_blank" rel="noopener">Download CV ↓</a>
       <a class="btn btn-ghost" href="https://linkedin.com/in/abia-khan-a66879256" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
     <div class="contact-meta">
@@ -631,8 +667,15 @@ function synergyGap(){
   s+='</svg>';return s;
 }
 
+/* ---------- config ---------- */
+/* To make the credit-risk dashboard live: in Power BI Service open the report,
+   File -> Embed report -> Publish to web (public), copy the src URL from the
+   <iframe> it gives you, and paste it between the quotes below. */
+const POWERBI_EMBED_URL="";
+
 /* ---------- modal content ---------- */
 const legend=(items)=>`<div class="legend">${items.map(i=>`<span><i style="background:${i[1]}"></i>${i[0]}</span>`).join('')}</div>`;
+const dl=(label,href)=>`<div class="dl-row"><a class="btn btn-ghost btn-sm" href="${href}" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>${label}</a></div>`;
 const M={
  dcf:{tag:'DCF · Intrinsic Valuation',title:'Burberry Group — 5-Year DCF',sub:'FTSE 100 luxury · CAPM WACC · Gordon Growth terminal value',
   body:`
@@ -649,7 +692,8 @@ const M={
     ${legend([['Current market price','var(--data-2)'],['DCF fair value','var(--pos)']])}</div>
   <div class="mh">The mechanics</div>
   <p><strong>WACC 7.5%</strong> — cost of equity 8.7% (CAPM: 4.97% gilt + 0.75β × 5.0% ERP); after-tax cost of debt 4.4%; weighted 71.5% equity / 28.5% debt. <strong>Terminal growth 2.5%</strong>, set below UK nominal GDP and at the low end of luxury long-run assumptions. Revenue recovers 3–4% as the turnaround inflects; EBITDA margin rebuilds from 20.3% toward 25.5% — deliberately below the 30%+ pre-turnaround peak.</p>
-  <div class="callout"><b>Discipline over optimism.</b> The model layers a two-variable WACC × growth sensitivity grid, so the £22.95 output is shown as a range, not a single point — and the equity note deliberately applies a margin of safety to it.</div>`},
+  <div class="callout"><b>Discipline over optimism.</b> The model layers a two-variable WACC × growth sensitivity grid, so the £22.95 output is shown as a range, not a single point — and the equity note deliberately applies a margin of safety to it.</div>
+  ${dl('Download the DCF workbook (.xlsx)','assets/Burberry_DCF_Valuation_Model.xlsx')}`},
 
  comps:{tag:'Trading Comparables',title:'Luxury &amp; UK Retail Comps',sub:'11 companies · EV/EBITDA · EV/Revenue · P/E',
   body:`
@@ -674,7 +718,8 @@ const M={
   <div class="chart-box"><div class="ct">Sources &amp; uses of funds</div><div class="cs">£2,177m transaction, funded 71% debt / 29% sponsor equity.</div>${sourcesUses()}
     ${legend([['Term Loan','var(--data)'],['Sponsor Equity','var(--accent)'],['Purchase / Refi','var(--data-2)']])}</div>
   <div class="chart-box"><div class="ct">Value creation — entry to exit</div><div class="cs">Exit modelled at the entry multiple (6.2×) — no multiple expansion assumed.</div>${evBridge()}</div>
-  <div class="callout"><b>The finding that matters.</b> Greggs' capex (~12% of revenue, from an aggressive store rollout) structurally exceeds D&amp;A, so cash-before-sweep is negative every year and the sweep never triggers. The 26.5% IRR is driven almost entirely by <b>EBITDA growth and margin expansion — not deleveraging</b>. That's exactly the caveat a real credit committee needs surfaced, not smoothed over.</div>`},
+  <div class="callout"><b>The finding that matters.</b> Greggs' capex (~12% of revenue, from an aggressive store rollout) structurally exceeds D&amp;A, so cash-before-sweep is negative every year and the sweep never triggers. The 26.5% IRR is driven almost entirely by <b>EBITDA growth and margin expansion — not deleveraging</b>. That's exactly the caveat a real credit committee needs surfaced, not smoothed over.</div>
+  ${dl('Download the LBO workbook (.xlsx)','assets/Greggs_LBO_Model.xlsx')}`},
 
  ma:{tag:'M&amp;A · Accretion / Dilution',title:'Moncler acquires Burberry',sub:'Bolt-on · 25% premium · 50/50 cash-and-stock',
   body:`
@@ -686,7 +731,8 @@ const M={
   </div>
   <div class="chart-box"><div class="ct">EPS impact to the acquirer (€)</div><div class="cs">Moncler standalone vs pro-forma diluted EPS.</div>${epsBars()}</div>
   <div class="chart-box"><div class="ct">Synergies — assumed vs breakeven</div><div class="cs">Pre-tax cost synergies required just to reach EPS-neutral.</div>${synergyGap()}</div>
-  <div class="callout"><b>An honest "no".</b> Burberry's trough-year net income is tiny next to the €5.4bn price, so the deal is ~21% dilutive and breakeven synergies (~€277m) run ~4× the assumed case. Cost synergies alone can't rescue it at this price — a real acquirer would need earnings recovery well underway, a lower premium, or a far bigger synergy case. Surfacing that is the whole point of the analysis.</div>`},
+  <div class="callout"><b>An honest "no".</b> Burberry's trough-year net income is tiny next to the €5.4bn price, so the deal is ~21% dilutive and breakeven synergies (~€277m) run ~4× the assumed case. Cost synergies alone can't rescue it at this price — a real acquirer would need earnings recovery well underway, a lower premium, or a far bigger synergy case. Surfacing that is the whole point of the analysis.</div>
+  ${dl('Download the M&A workbook (.xlsx)','assets/Moncler_Burberry_Merger_Model.xlsx')}`},
 
  note:{tag:'Sell-Side Research',title:'BRBY — Equity Research Note',sub:'Initiation · BUY · Target price £16.50',
   body:`
@@ -702,7 +748,8 @@ const M={
   <p><strong>Two independent methods agree.</strong> The DCF (£22.95) and EV/Revenue comp (£19.52) both signal material upside against £10.72 — convergence of an intrinsic and a relative method is a stronger signal than either alone.</p>
   <div class="callout"><b>Where £16.50 comes from.</b> Not a naïve average. The EBITDA- and P/E-based comps run on trough earnings and understate value, so the note weights the DCF and EV/Revenue most heavily, then applies a margin of safety to the raw £22.95 DCF output for execution risk — landing at £16.50, notably above the ~£12.85 Street consensus.</div>
   <div class="mh">Key risks flagged</div>
-  <p>Margin recovery stalling · FX and China luxury-demand exposure · a meaningful gap to sell-side consensus that the note treats as a flag to revisit assumptions, not to dismiss.</p>`},
+  <p>Margin recovery stalling · FX and China luxury-demand exposure · a meaningful gap to sell-side consensus that the note treats as a flag to revisit assumptions, not to dismiss.</p>
+  ${dl('Download the full research note (.docx)','assets/Burberry_Equity_Research_Note.docx')}`},
 
  pbi:{tag:'Power BI · Credit Risk',title:'Lending Credit-Risk Dashboard',sub:'150,000-record loan book · Power Query · risk segmentation · calibration',
   body:`
@@ -728,7 +775,13 @@ const M={
     <span class="tag-pill">Cohort drill-down</span>
   </div>
   <div class="callout"><b>From data to decision.</b> The dashboard turns a large, messy lending book into a view a credit team can actually act on — where risk concentrates, and whether the risk model's predictions hold up against realised outcomes.</div>
-  <p style="font-size:.82rem;color:var(--faint);font-style:italic">Interactive .pbix workbook — full dashboard and workings available on request.</p>`}
+  <div class="mh">Use the dashboard</div>
+  <div id="pbiMount"></div>
+  <div class="dl-row">
+    <a class="btn btn-primary btn-sm" href="assets/Credit_Risk_Portfolio_Dashboard.pbix" download="Credit_Risk_Portfolio_Dashboard.pbix">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      Download .pbix (Power BI Desktop)</a>
+  </div>`}
 };
 
 /* ---------- modal wiring ---------- */
@@ -742,8 +795,20 @@ function openModal(key){
     <div class="modal-body">${m.body}</div>`;
   scrim.hidden=false;document.body.style.overflow='hidden';
   modal.scrollTop=0;scrim.scrollTop=0;
+  if(key==='pbi')mountPBI();
   document.getElementById('xBtn').addEventListener('click',closeModal);
   document.getElementById('xBtn').focus();
+}
+function mountPBI(){
+  const m=document.getElementById('pbiMount');if(!m)return;
+  if(POWERBI_EMBED_URL){
+    m.innerHTML=`<iframe class="pbi-frame" title="Credit Risk Portfolio Dashboard" src="${POWERBI_EMBED_URL}" frameborder="0" allowfullscreen="true"></iframe>`;
+  }else{
+    m.innerHTML=`<div class="pbi-placeholder">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6" rx="1"/><rect x="12" y="7" width="3" height="10" rx="1"/><rect x="17" y="13" width="3" height="4" rx="1"/></svg>
+      <b>Live interactive dashboard</b>
+      <span>Download the workbook below to open it in Power BI Desktop, or embed the live report here — see the note in the page source (<code>POWERBI_EMBED_URL</code>) to drop in a Power BI "Publish&nbsp;to&nbsp;web" link.</span></div>`;
+  }
 }
 function closeModal(){scrim.hidden=true;document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
 document.getElementById('projGrid').querySelectorAll('.pcard').forEach(c=>{
